@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jagannath Rath Yatra — July 23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --saffron:#E4622B;
+    --maroon:#7A1F1F;
+    --gold:#C9962C;
+    --cream:#FBF2E1;
+    --ink:#2B1710;
+    --deep:#4A1414;
+    --wood:#5C3A21;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Poppins',sans-serif;
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Yatra One',cursive;
+    color:var(--maroon);
+    font-weight:400;
+    letter-spacing:.5px;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+
+  /* Decorative wheel (Rath chakra) */
+  .chakra{
+    display:inline-block;
+    animation:spin 40s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg);} }
+  @media (prefers-reduced-motion: reduce){ .chakra{animation:none;} }
+
+  /* Top ribbon */
+  .ribbon{
+    background:var(--maroon);
+    color:var(--cream);
+    text-align:center;
+    font-size:.9rem;
+    padding:8px 12px;
+    letter-spacing:.5px;
+  }
+  .ribbon b{color:var(--gold);}
+
+  header.hero{
+    position:relative;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(201,150,44,.18), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(228,98,43,.18), transparent 45%),
+      linear-gradient(rgba(38,15,15,.72), rgba(38,15,15,.82)),
+      url('iskon_rath_yatra_image_2.jpeg') center/cover no-repeat;
+    color:var(--cream);
+    padding:70px 0 90px;
+    text-align:center;
+    overflow:hidden;
+    border-bottom:6px solid var(--gold);
+  }
+  header.hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(255,255,255,.02) 0 2px, transparent 2px 14px);
+    pointer-events:none;
+  }
+  .hero .chakra{width:70px; height:70px; margin-bottom:18px; opacity:.9;}
+  .hero .eyebrow{
+    display:inline-block;
+    background:rgba(201,150,44,.15);
+    border:1px solid var(--gold);
+    color:var(--gold);
+    padding:6px 18px;
+    border-radius:30px;
+    font-size:.85rem;
+    margin-bottom:22px;
+    letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.2rem);
+    color:var(--cream);
+    line-height:1.15;
+  }
+  .hero h1 span{color:var(--gold);}
+  .hero p.sub{
+    max-width:600px;
+    margin:20px auto 8px;
+    color:#EAD9C4;
+    font-size:1.1rem;
+  }
+  .date-badge{
+    display:flex; gap:18px; justify-content:center; align-items:center;
+    margin:34px auto 10px; flex-wrap:wrap;
+  }
+  .date-badge .card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(201,150,44,.4);
+    border-radius:14px;
+    padding:16px 26px;
+    min-width:100px;
+  }
+  .date-badge .num{font-family:'Yatra One'; font-size:2.1rem; color:var(--gold); display:block;}
+  .date-badge .lbl{font-size:.8rem; color:#EAD9C4; letter-spacing:1px;}
+  .hero-ctas{
+    display:flex; gap:16px; justify-content:center; margin-top:34px; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:1rem;
+    cursor:pointer;
+    border:2px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn:focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+  .btn-primary{background:var(--gold); color:var(--ink); box-shadow:0 6px 0 #8f6d1c;}
+  .btn-primary:hover{box-shadow:0 8px 0 #8f6d1c;}
+  .btn-outline{background:transparent; color:var(--cream); border-color:var(--cream);}
+  .btn-outline:hover{background:rgba(255,255,255,.08);}
+  .btn-donate{background:var(--saffron); color:#fff; box-shadow:0 6px 0 #a13f18;}
+  .btn-donate:hover{box-shadow:0 8px 0 #a13f18;}
+
+  section{padding:70px 0;}
+  .section-head{text-align:center; max-width:640px; margin:0 auto 44px;}
+  .section-head .tag{
+    color:var(--saffron); font-weight:600; letter-spacing:1.5px; font-size:.85rem;
+    text-transform:uppercase;
+  }
+  .section-head h2{font-size:clamp(1.8rem,4vw,2.6rem); margin-top:8px;}
+  .section-head p{color:#5c4636; margin-top:12px;}
+
+  .divider{
+    display:flex; align-items:center; gap:16px;
+    max-width:200px; margin:0 auto 50px;
+  }
+  .divider .chakra{width:32px; height:32px;}
+  .divider .line{flex:1; height:2px; background:linear-gradient(90deg, transparent, var(--gold), transparent);}
+
+  /* About strip */
+  .about-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+  }
+  .about-card{
+    background:#fff;
+    border:1px solid #eadfc8;
+    border-radius:16px;
+    padding:28px 22px;
+    text-align:center;
+    box-shadow:0 4px 18px rgba(122,31,31,.05);
+  }
+  .about-card .icon{font-size:1.9rem; margin-bottom:10px;}
+  .about-card h3{font-size:1.15rem; margin-bottom:6px;}
+  .about-card p{color:#5c4636; font-size:.95rem;}
+
+  /* Volunteer form */
+  .panel{
+    background:#fff;
+    border:1px solid #eadfc8;
+    border-radius:20px;
+    box-shadow:0 10px 34px rgba(122,31,31,.08);
+    overflow:hidden;
+  }
+  .volunteer-wrap{
+    display:grid; grid-template-columns:1fr 1.3fr;
+  }
+  .volunteer-info{
+    background:linear-gradient(160deg, var(--maroon), var(--deep));
+    color:var(--cream);
+    padding:42px 34px;
+  }
+  .volunteer-info h3{color:var(--gold); font-size:1.5rem; margin-bottom:14px;}
+  .volunteer-info p{color:#EAD9C4; font-size:.95rem; margin-bottom:18px;}
+  .volunteer-info ul{list-style:none; display:flex; flex-direction:column; gap:12px;}
+  .volunteer-info li{
+    display:flex; gap:10px; align-items:flex-start; font-size:.92rem; color:#EAD9C4;
+  }
+  .volunteer-info li::before{content:"卐"; color:var(--gold); font-size:.9rem;}
+  form{padding:38px 34px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-size:.88rem; font-weight:600; margin-bottom:6px; color:var(--maroon);}
+  .field input, .field select, .field textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1.5px solid #e2d3b8;
+    border-radius:8px;
+    font-family:inherit;
+    font-size:.95rem;
+    background:#FFFDF8;
+    color:var(--ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none; border-color:var(--saffron); box-shadow:0 0 0 3px rgba(228,98,43,.15);
+  }
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .checks{display:flex; flex-wrap:wrap; gap:10px;}
+  .chip{
+    border:1.5px solid #e2d3b8; border-radius:30px; padding:8px 16px; font-size:.86rem;
+    cursor:pointer; user-select:none; background:#FFFDF8; color:var(--ink);
+  }
+  .chip input{display:none;}
+  .chip:has(input:checked){
+    background:var(--saffron); border-color:var(--saffron); color:#fff; font-weight:600;
+  }
+  .submit-row{display:flex; align-items:center; gap:16px; margin-top:6px; flex-wrap:wrap;}
+  .form-note{font-size:.8rem; color:#8a7355;}
+  .success-msg{
+    display:none; margin-top:16px; background:#EAF6EC; border:1px solid #b7ddbe;
+    color:#276438; padding:14px 16px; border-radius:10px; font-size:.9rem;
+  }
+  .success-msg.show{display:block;}
+
+  /* Donation */
+  .donate-wrap{
+    display:grid; grid-template-columns:1fr 1fr; gap:28px;
+  }
+  .donate-card{
+    background:#fff; border:1px solid #eadfc8; border-radius:20px; padding:36px;
+    box-shadow:0 10px 34px rgba(122,31,31,.08);
+  }
+  .amounts{display:flex; gap:10px; flex-wrap:wrap; margin:20px 0 26px;}
+  .amt{
+    border:1.5px solid #e2d3b8; padding:10px 20px; border-radius:8px; font-weight:600;
+    cursor:pointer; background:#FFFDF8; color:var(--ink);
+  }
+  .amt.active{background:var(--gold); color:var(--ink); border-color:var(--gold);}
+  .upi-box{
+    background:#FBF2E1; border:1px dashed var(--gold); border-radius:12px;
+    padding:16px 18px; display:flex; justify-content:space-between; align-items:center;
+    margin-top:18px; font-size:.9rem;
+  }
+  .upi-box code{font-weight:700; color:var(--maroon);}
+  .copy-btn{
+    background:var(--maroon); color:#fff; border:none; padding:8px 14px; border-radius:6px;
+    font-size:.82rem; cursor:pointer;
+  }
+  .donate-side{
+    background:linear-gradient(160deg, var(--saffron), #c94d1e);
+    color:#fff; border-radius:20px; padding:36px; display:flex; flex-direction:column; justify-content:center;
+  }
+  .donate-side h3{color:#fff; font-size:1.5rem; margin-bottom:12px;}
+  .donate-side p{color:#FCE3D3; font-size:.95rem; margin-bottom:22px;}
+
+  /* Contact */
+  .contact-wrap{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  .contact-info .item{
+    display:flex; gap:14px; margin-bottom:22px; align-items:flex-start;
+  }
+  .contact-info .item .ic{
+    width:42px; height:42px; border-radius:50%; background:var(--maroon); color:var(--gold);
+    display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0;
+  }
+  .contact-info .item h4{font-size:1rem; color:var(--maroon); margin-bottom:2px;}
+  .contact-info .item p{font-size:.9rem; color:#5c4636;}
+  .contact-info .item a{color:var(--saffron); font-weight:600;}
+
+  footer{
+    background:var(--deep); color:#EAD9C4; text-align:center; padding:36px 20px 26px;
+  }
+  footer .chakra{width:34px; height:34px; margin-bottom:12px;}
+  footer p{font-size:.85rem; opacity:.75; margin-top:6px;}
+
+  @media (max-width:820px){
+    .volunteer-wrap, .donate-wrap, .contact-wrap, .about-grid{grid-template-columns:1fr;}
+    .row2{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="ribbon">🚩 <b>Jai Jagannath!</b> Rath Yatra Festival — July 23 | Become a Volunteer & Join the Seva 🚩</div>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="chakra" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" stroke="#C9962C" stroke-width="3"/>
+      <circle cx="50" cy="50" r="8" fill="#C9962C"/>
+      <g stroke="#C9962C" stroke-width="3">
+        <line x1="50" y1="4" x2="50" y2="96"/>
+        <line x1="4" y1="50" x2="96" y2="50"/>
+        <line x1="17" y1="17" x2="83" y2="83"/>
+        <line x1="83" y1="17" x2="17" y2="83"/>
+        <line x1="50" y1="4" x2="50" y2="96" transform="rotate(22.5 50 50)"/>
+        <line x1="50" y1="4" x2="50" y2="96" transform="rotate(45 50 50)"/>
+        <line x1="50" y1="4" x2="50" y2="96" transform="rotate(67.5 50 50)"/>
+      </g>
+    </svg>
+    <div class="eyebrow">Lord Jagannath Rath Yatra Festival</div>
+    <h1>Join This Sacred <span>Rath Yatra</span><br>Celebration</h1>
+    <p class="sub">A blend of seva, devotion and celebration — join us as a volunteer, make a donation, or reach out to make this event a success.</p>
+
+    <div class="date-badge">
+      <div class="card"><span class="num">23</span><span class="lbl">July</span></div>
+      <div class="card"><span class="num">Morning</span><span class="lbl">Yatra Begins</span></div>
+      <div class="card"><span class="num">Free</span><span class="lbl">Entry for All</span></div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="#volunteer" class="btn btn-primary">🙏 Become a Volunteer</a>
+      <a href="#donate" class="btn btn-donate">🪔 Donate Now</a>
+      <a href="#contact" class="btn btn-outline">📞 Contact Us</a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">About the Yatra</div>
+      <h2>Your Participation in This Sacred Occasion</h2>
+      <p>The Rath Yatra of Lord Jagannath, Balabhadra and Subhadra is carried out every year from our center with great devotion. This year too, we need your support.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="icon">🙏</div>
+        <h3>Volunteer</h3>
+        <p>Help with arrangements, prasad distribution, welcoming guests, and traffic support.</p>
+      </div>
+      <div class="about-card">
+        <div class="icon">🪔</div>
+        <h3>Donate</h3>
+        <p>Contribute voluntarily towards bhog, decoration, and event arrangements.</p>
+      </div>
+      <div class="about-card">
+        <div class="icon">📞</div>
+        <h3>Stay Connected</h3>
+        <p>Reach out to the center directly for any information or support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER -->
+<section id="volunteer" style="background:#fff8ec;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Join the Seva</div>
+      <h2>Volunteer Registration Form</h2>
+      <p>Fill in your details below — our team will contact you shortly.</p>
+    </div>
+
+    <div class="panel volunteer-wrap">
+      <div class="volunteer-info">
+        <h3>How You Can Help</h3>
+        <p>Every helping hand makes this seva-yajna a success. Choose your area of interest from the tasks below:</p>
+        <ul>
+          <li>Prasad & bhog distribution arrangements</li>
+          <li>Rath route & traffic management</li>
+          <li>Guest welcome & guidance</li>
+          <li>Cleaning & security arrangements</li>
+          <li>Decoration & stage management</li>
+        </ul>
+      </div>
+
+      <form id="volunteerForm">
+        <div class="row2">
+          <div class="field">
+            <label for="vname">Full Name *</label>
+            <input type="text" id="vname" required placeholder="Enter your name">
+          </div>
+          <div class="field">
+            <label for="vphone">Mobile Number *</label>
+            <input type="tel" id="vphone" required pattern="[0-9]{10}" placeholder="10-digit number">
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="vemail">Email (optional)</label>
+            <input type="email" id="vemail" placeholder="[email protected]">
+          </div>
+          <div class="field">
+            <label for="vage">Age</label>
+            <input type="number" id="vage" min="12" max="90" placeholder="e.g. 22">
+          </div>
+        </div>
+        <div class="field">
+          <label>Which task would you like to help with? *</label>
+          <div class="checks">
+            <label class="chip"><input type="checkbox" name="task" value="Prasad Distribution">Prasad Distribution</label>
+            <label class="chip"><input type="checkbox" name="task" value="Traffic/Route">Traffic Management</label>
+            <label class="chip"><input type="checkbox" name="task" value="Welcome Team">Welcome Team</label>
+            <label class="chip"><input type="checkbox" name="task" value="Cleaning/Safety">Cleaning & Safety</label>
+            <label class="chip"><input type="checkbox" name="task" value="Decoration">Decoration</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="vmsg">Any special message (optional)</label>
+          <textarea id="vmsg" rows="3" placeholder="Let us know if there's anything else..."></textarea>
+        </div>
+        <div class="submit-row">
+          <button type="submit" class="btn btn-primary">Submit Registration 🙏</button>
+          <span class="form-note">* Required fields</span>
+        </div>
+        <div class="success-msg" id="volunteerSuccess">✅ Thank you! Your registration has been received. Our team will contact you soon. Jai Jagannath! 🙏</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section id="donate">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Support the Seva</div>
+      <h2>Make a Donation</h2>
+      <p>Your voluntary contribution will go towards bhog, decoration, and yatra arrangements.</p>
+    </div>
+
+    <div class="donate-wrap">
+      <div class="donate-card">
+        <h3 style="margin-bottom:6px;">Choose an Amount</h3>
+        <p style="color:#5c4636; font-size:.9rem;">Pick from the options below, or donate any amount you wish.</p>
+        <div class="amounts">
+          <div class="amt">₹101</div>
+          <div class="amt active">₹501</div>
+          <div class="amt">₹1100</div>
+          <div class="amt">₹2100</div>
+          <div class="amt">Other Amount</div>
+        </div>
+        <a href="#" id="donateLink" class="btn btn-donate" style="width:100%; text-align:center; display:block;">Donate Now →</a>
+        <div class="upi-box">
+          <span>UPI ID: <code id="upiId">center@upi</code></span>
+          <button class="copy-btn" onclick="copyUpi()">Copy</button>
+        </div>
+        <p style="font-size:.78rem; color:#8a7355; margin-top:14px;">
+          ⚠️ Note: Please replace the donation link and UPI ID above with your center's actual payment link/UPI ID.
+        </p>
+      </div>
+
+      <div class="donate-side">
+        <h3>Why Your Donation Matters</h3>
+        <p>Every contribution — big or small — helps make this yatra grand and well-organized. Your support in the service of Lord Jagannath is invaluable.</p>
+        <p style="font-weight:600; color:#fff;">Jai Jagannath! 🚩</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:#fff8ec;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Get In Touch</div>
+      <h2>Contact the Center</h2>
+      <p>For any information, suggestions, or support, reach out through the details below.</p>
+    </div>
+
+    <div class="contact-wrap">
+      <div class="contact-info panel" style="padding:34px;">
+        <div class="item">
+          <div class="ic">📍</div>
+          <div><h4>Center Address</h4><p>[Enter your center's full address here]</p></div>
+        </div>
+        <div class="item">
+          <div class="ic">📞</div>
+          <div><h4>Phone Number</h4><p><a href="tel:+919999999999">+91 99999 99999</a></p></div>
+        </div>
+        <div class="item">
+          <div class="ic">✉️</div>
+          <div><h4>Email</h4><p><a href="mailto:[email protected]">[email protected]</a></p></div>
+        </div>
+        <div class="item">
+          <div class="ic">🕐</div>
+          <div><h4>Contact Hours</h4><p>9:00 AM — 7:00 PM</p></div>
+        </div>
+      </div>
+
+      <form class="panel" id="contactForm" style="padding:34px;">
+        <div class="field">
+          <label for="cname">Name *</label>
+          <input type="text" id="cname" required placeholder="Enter your name">
+        </div>
+        <div class="field">
+          <label for="cphone">Mobile Number *</label>
+          <input type="tel" id="cphone" required pattern="[0-9]{10}" placeholder="10-digit number">
+        </div>
+        <div class="field">
+          <label for="cmsg">Your Message *</label>
+          <textarea id="cmsg" rows="4" required placeholder="Write your message here..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message ✉️</button>
+        <div class="success-msg" id="contactSuccess">✅ Thank you! Your message has been received. We'll get back to you soon.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <svg class="chakra" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="46" stroke="#C9962C" stroke-width="4"/>
+    <circle cx="50" cy="50" r="8" fill="#C9962C"/>
+    <g stroke="#C9962C" stroke-width="4">
+      <line x1="50" y1="4" x2="50" y2="96"/>
+      <line x1="4" y1="50" x2="96" y2="50"/>
+      <line x1="17" y1="17" x2="83" y2="83"/>
+      <line x1="83" y1="17" x2="17" y2="83"/>
+    </g>
+  </svg>
+  <div style="font-family:'Yatra One'; font-size:1.3rem; color:var(--gold);">Jai Jagannath 🚩</div>
+  <p>© 2026 Rath Yatra Festival Committee | Organized with Devotion</p>
+</footer>
+
+<script>
+  // Volunteer form submit (client-side only demo)
+  document.getElementById('volunteerForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('volunteerSuccess').classList.add('show');
+    this.reset();
+  });
+
+  // Contact form submit (client-side only demo)
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('contactSuccess').classList.add('show');
+    this.reset();
+  });
+
+  // Amount chip selection
+  document.querySelectorAll('.amt').forEach(function(el){
+    el.addEventListener('click', function(){
+      document.querySelectorAll('.amt').forEach(a => a.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Donation link — replace href below with real payment link
+  document.getElementById('donateLink').setAttribute('href', 'https://your-donation-payment-link.example.com');
+
+  function copyUpi(){
+    navigator.clipboard.writeText(document.getElementById('upiId').textContent);
+    alert('UPI ID copied!');
+  }
+</script>
+
+</body>
+</html>
